@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: adm
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/adm
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update        # use "update" se quiser gerar tabelas automaticamente
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  jackson:
+    time-zone: America/Sao_Paulo
+
+  sql:
+    init:
+      mode: never           # use "always" se quiser rodar scripts data.sql/schema.sql
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
