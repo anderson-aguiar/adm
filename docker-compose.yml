@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+  app:
+    build: .
+    container_name: adm-app
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_APPLICATION_NAME: adm
+      TZ: America/Sao_Paulo
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/adm
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_PROPERTIES_HIBERNATE_FORMAT_SQL: "true"
+      SPRING_JACKSON_TIME_ZONE: America/Sao_Paulo
+    depends_on:
+      - db
+    networks:
+      - adm-net
+
+  db:
+    image: postgres:16
+    container_name: adm-db
+    restart: always
+    environment:
+      POSTGRES_DB: adm
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - adm_pgdata:/var/lib/postgresql/data
+    networks:
+      - adm-net
+
+  pgadmin:
+    image: dpage/pgadmin4:8
+    container_name: adm-pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "15432:80"
+    depends_on:
+      - db
+    networks:
+      - adm-net
+
+networks:
+  adm-net:
+
+volumes:
+  adm_pgdata:
