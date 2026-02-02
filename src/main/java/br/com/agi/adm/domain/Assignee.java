@@ -3,14 +3,17 @@ package br.com.agi.adm.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "assignee")
 @Getter
 @Setter
 @ToString
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "assignee")
 public class Assignee {
 
     @Id
@@ -18,4 +21,7 @@ public class Assignee {
     private Long id;
 
     private String name;
+
+    @OneToMany(mappedBy = "assignee")
+    private List<Ticket> tickets = new ArrayList<>();
 }

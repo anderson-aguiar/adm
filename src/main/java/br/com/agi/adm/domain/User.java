@@ -7,7 +7,10 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@Table(name = "user")
+import java.util.ArrayList;
+import java.util.List;
+
+@Table(name = "applicant")
 @Entity
 @Getter
 @Setter
@@ -21,4 +24,7 @@ public class User {
 
     private String name;
     private String email;
+
+    @OneToMany(mappedBy = "user")
+    private List<Ticket> tickets = new ArrayList<>();
 }
