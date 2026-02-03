@@ -1,11 +1,10 @@
 package br.com.agi.adm.domain.mapper;
 
-
-import br.com.agi.adm.domain.Assignee;
-import br.com.agi.adm.domain.Ticket;
-import br.com.agi.adm.domain.User;
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
 import br.com.agi.adm.domain.dto.response.TicketResponseDTO;
+import br.com.agi.adm.domain.entity.Assignee;
+import br.com.agi.adm.domain.entity.Ticket;
+import br.com.agi.adm.domain.entity.User;
 import br.com.agi.adm.domain.enums.TicketPriority;
 import br.com.agi.adm.domain.enums.TicketStatus;
 import org.springframework.stereotype.Component;

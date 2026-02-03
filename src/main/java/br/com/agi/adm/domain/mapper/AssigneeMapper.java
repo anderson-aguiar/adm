@@ -1,8 +1,8 @@
 package br.com.agi.adm.domain.mapper;
 
-import br.com.agi.adm.domain.Assignee;
 import br.com.agi.adm.domain.dto.request.AssigneeRequestDTO;
 import br.com.agi.adm.domain.dto.response.AssigneeResponseDTO;
+import br.com.agi.adm.domain.entity.Assignee;
 
 public class AssigneeMapper {
 
