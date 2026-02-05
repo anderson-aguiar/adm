@@ -9,6 +9,7 @@ public enum TicketStatus {
 
     OPEN("ABERTO"),
     IN_PROGRESS("EM_PROGRESSO"),
+    UNDEFINED("INDEFINIDO"),
     CLOSED("FECHADO");
 
     private final String value;
