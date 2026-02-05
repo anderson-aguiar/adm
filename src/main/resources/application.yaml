@@ -23,6 +23,23 @@ spring:
     init:
       mode: never           # use "always" se quiser rodar scripts data.sql/schema.sql
 
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        ticketProducer-out-0:
+          destination: ticket
+          content-type: application/json
+          producer:
+            required-groups: demo-group
+        ticketConsumer-in-0:
+          destination: ticket
+          group: demo-group
+
 server:
   port: 8081
   servlet:
