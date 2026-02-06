@@ -1,13 +1,13 @@
-package br.com.agi.adm.domain.service;
+package br.com.agi.adm.application.service;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
 import br.com.agi.adm.domain.dto.response.TicketResponseDTO;
 import br.com.agi.adm.domain.entity.Assignee;
 import br.com.agi.adm.domain.entity.User;
 import br.com.agi.adm.domain.mapper.TicketMapper;
-import br.com.agi.adm.repository.AssigneeRepository;
-import br.com.agi.adm.repository.TicketRepository;
-import br.com.agi.adm.repository.UserRepository;
+import br.com.agi.adm.domain.repository.AssigneeRepository;
+import br.com.agi.adm.domain.repository.TicketRepository;
+import br.com.agi.adm.domain.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,6 @@ public class TicketService {
     @Transactional
     public TicketResponseDTO save(TicketRequestDTO dto) {
         var entity = ticketMapper.toEntity(dto);
-
 
         User user = userRepository.findByEmail(entity.getUser().getEmail())
                 .orElseGet(() -> userRepository.save(entity.getUser()));

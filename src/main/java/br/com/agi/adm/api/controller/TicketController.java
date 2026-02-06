@@ -1,8 +1,8 @@
-package br.com.agi.adm.domain.controller;
+package br.com.agi.adm.api.controller;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
 import br.com.agi.adm.domain.dto.response.TicketResponseDTO;
-import br.com.agi.adm.domain.service.TicketService;
+import br.com.agi.adm.application.service.TicketService;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

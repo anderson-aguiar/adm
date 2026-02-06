@@ -1,4 +1,4 @@
-package br.com.agi.adm.domain.producer.rabbitmq;
+package br.com.agi.adm.infra.messaging.producer;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
 import org.springframework.cloud.stream.function.StreamBridge;

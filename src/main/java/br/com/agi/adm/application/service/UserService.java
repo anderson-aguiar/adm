@@ -1,10 +1,10 @@
-package br.com.agi.adm.domain.service;
+package br.com.agi.adm.application.service;
 
 import br.com.agi.adm.domain.dto.request.UserRequestDTO;
 import br.com.agi.adm.domain.dto.response.UserResponseDTO;
 import br.com.agi.adm.domain.entity.User;
 import br.com.agi.adm.domain.mapper.UserMapper;
-import br.com.agi.adm.repository.UserRepository;
+import br.com.agi.adm.domain.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
