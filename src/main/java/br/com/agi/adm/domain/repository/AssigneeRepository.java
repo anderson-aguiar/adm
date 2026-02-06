@@ -1,4 +1,4 @@
-package br.com.agi.adm.repository;
+package br.com.agi.adm.domain.repository;
 
 import br.com.agi.adm.domain.entity.Assignee;
 import org.springframework.data.jpa.repository.JpaRepository;
