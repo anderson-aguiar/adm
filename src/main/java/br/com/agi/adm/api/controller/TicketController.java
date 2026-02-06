@@ -1,8 +1,8 @@
 package br.com.agi.adm.api.controller;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
-import br.com.agi.adm.domain.dto.response.TicketResponseDTO;
 import br.com.agi.adm.application.service.TicketService;
+import br.com.agi.adm.infra.messaging.producer.TicketProducer;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,13 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/ticket")
 public class TicketController {
 
-    private final TicketService ticketService;
+    private final TicketProducer ticketProducer;
 
     @PostMapping
-    public ResponseEntity<TicketResponseDTO> insert(@RequestBody @NonNull TicketRequestDTO dto){
+    public void insert(@RequestBody @NonNull TicketRequestDTO dto){
 
-        var response = ticketService.save(dto);
+        ticketProducer.publish(dto);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 }
