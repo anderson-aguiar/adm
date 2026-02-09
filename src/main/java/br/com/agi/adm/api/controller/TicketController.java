@@ -1,12 +1,9 @@
 package br.com.agi.adm.api.controller;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
-import br.com.agi.adm.application.service.TicketService;
 import br.com.agi.adm.infra.messaging.producer.TicketProducer;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

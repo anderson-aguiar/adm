@@ -36,7 +36,7 @@ spring:
           content-type: application/json
           producer:
             required-groups: demo-group
-        ticketConsumer-in-0:
+        consumer-in-0:
           destination: ticket
           group: demo-group
 
