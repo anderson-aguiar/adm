@@ -26,7 +26,7 @@ public class TicketConsumer {
 
         return dto -> {
 
-            long retryCount = Optional.ofNullable(
+            var retryCount = Optional.ofNullable(
                     dto.getHeaders().get("amqp_retryCount", Long.class)
             ).orElse(0L);
 
