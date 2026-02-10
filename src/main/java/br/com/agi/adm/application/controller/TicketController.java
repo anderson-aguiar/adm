@@ -1,4 +1,4 @@
-package br.com.agi.adm.api.controller;
+package br.com.agi.adm.application.controller;
 
 import br.com.agi.adm.domain.dto.request.TicketRequestDTO;
 import br.com.agi.adm.infra.messaging.producer.TicketProducer;

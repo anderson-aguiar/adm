@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum TicketStatus {
 
     OPEN("ABERTO"),
-    IN_PROGRESS("EM_PROGRESSO"),
+    IN_ANALYSIS("EM_PROGRESSO"),
     UNDEFINED("INDEFINIDO"),
     CLOSED("FECHADO");
 
