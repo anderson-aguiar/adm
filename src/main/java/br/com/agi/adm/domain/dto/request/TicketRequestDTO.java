@@ -14,7 +14,7 @@ public record TicketRequestDTO(
         String priority,
         User user,
         @JsonProperty("assignedTo")
-        Assignee assignee,
+        Assignee assignedTo,
         LocalDateTime createdAt,
         List<CommentsRequestDTO> comments
 ) {}

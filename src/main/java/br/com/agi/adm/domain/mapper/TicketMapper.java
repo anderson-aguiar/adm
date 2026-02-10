@@ -50,9 +50,9 @@ public class TicketMapper {
             ticket.setUser(user);
         }
 
-        if (dto.assignee() != null) {
+        if (dto.assignedTo() != null) {
             Assignee assignee = new Assignee();
-            assignee.setName(dto.assignee().getName());
+            assignee.setName(dto.assignedTo().getName());
             ticket.setAssignee(assignee);
         }
         if (dto.comments() != null) {

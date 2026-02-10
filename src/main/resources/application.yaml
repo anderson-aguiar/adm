@@ -29,16 +29,35 @@ spring:
     username: guest
     password: guest
   cloud:
+    function:
+      definition: consumer
     stream:
       bindings:
         ticketProducer-out-0:
           destination: ticket
           content-type: application/json
+#          producer:
+#            required-groups: demo-group
+        final-dlq-ticket-out-0:
+          destination: final.dlq.ticket.created
+          content-type: application/json
           producer:
-            required-groups: demo-group
+            required-groups: final-dlq-a
         consumer-in-0:
           destination: ticket
           group: demo-group
+          consumer:
+            max-attempts: 1
+            bind-queue: false
+            declare-exchange: false
+            queue-name-group-only: true
+      rabbit:
+        bindings:
+          consumer-in-0:
+            consumer:
+              auto-bind-dlq: true
+              dlq-ttl: 10000
+              dlq-dead-letter-exchange:
 
 server:
   port: 8081
